@@ -1,0 +1,116 @@
+<order>
+        <services>
+            <serv isClosed="0">
+                <serv_id>*****</serv_id>
+                <bic>05009991</bic>
+                <schet>т</schet>
+                <corr_schet></corr_schet>
+                <pars>
+                    <par
+                        step="1"
+                        name="ФИО ПЛАТЕЛЬЩИКА"
+                        fullname="ФИО плательщика"
+                        comment="Введите ФИО полностью, лица за кого оплачиваетсяуслуга, например: Иванов Иван Иванович"
+                        isEditable="1"
+                        isScanable="0"
+                        isVisible="1"
+                        isRequired="1"
+                        isPrinted="1"
+                        isValidateOnLine="0"
+                        type="T"
+                        min_length="0"
+                        max_length="50"
+                        double_input="0"
+                        value="Лыулао"
+                        reg_exp="^[А-яЁё  -]*[А-яЁё]{1,}[А-яЁё]{1,}[А-яЁё  -]*$"
+                        from_debt="0"/>
+                    <par
+                        step="1"
+                        name="АДРЕС_ПЛАТЕЛЬЩИКА"
+                        fullname="Адрес получателя услуги"
+                        comment="Введите адрес лица за кого оплачивается услуга, например: г. Москва, ул. Шверника д.11-111"
+                        isEditable="1"
+                        isScanable="0"
+                        isVisible="1"
+                        isRequired="1"
+                        isPrinted="1"
+                        isValidateOnLine="0"
+                        type="T"
+                        min_length="1"
+                        max_length="150"
+                        double_input="0"
+                        value="ыуавуы"
+                        reg_exp="^[А-яЁё0-9.,  /-]{5,}$"
+                        from_debt="0"/>
+                    <par
+                        step="1"
+                        name="ВИД_ДОК"
+                        fullname="Вид документа"
+                        comment="Выберите вид документа, лица за кого оплачивается услуга"
+                        isEditable="1"
+                        isScanable="0"
+                        isVisible="1"
+                        isRequired="1"
+                        isPrinted="1"
+                        isValidateOnLine="0"
+                        type="M"
+                        min_length="0"
+                        max_length="250"
+                        double_input="0"
+                        value="ПАСПОРТ РФ"
+                        reg_exp=""
+                        from_debt="0">
+                        <par_list value="ПАСПОРТ РФ"/>
+                        <par_list value="СВИД О РОЖДЕНИИ"/>
+                        <par_list value="ИНН"/>
+                        <par_list value="ВОДИТ УДОСТОВЕРЕНИЕ"/>
+                        <par_list value="СВИД_РЕГ_ТС"/>
+                        <par_list value="ПАСПОРТ МОРЯКА"/>
+                        <par_list value="УДОСТОВЕР ВОЕНСЛУЖ"/>
+                        <par_list value="ОХОТНИЧИЙ БИЛЕТ"/>
+                        <par_list value="РАЗРЕШ НА ОРУЖИЕ"/>
+                    </par>
+                    <par
+                        step="1"
+                        name="НОМЕР ДОКУМЕНТА"
+                        fullname="Серия и номер документа"
+                        comment="Введите серию и номер документа, лица за кого оплачивается услуга"
+                        isEditable="1"
+                        isScanable="0"
+                        isVisible="1"
+                        isRequired="1"
+                        isPrinted="1"
+                        isValidateOnLine="0"
+                        type="C"
+                        min_length="10"
+                        max_length="10"
+                        double_input="0"
+                        value="1234556778"
+                        reg_exp=""
+                        from_debt="0"/>
+                    <par
+                        step="1"
+                        name="ГРАЖДАНСТВО"
+                        fullname="Гражданство"
+                        comment="Выберите гражданство, лица за кого оплачивается услуга, из списка"
+                        isEditable="1"
+                        isScanable="0"
+                        isVisible="1"
+                        isRequired="1"
+                        isPrinted="1"
+                        isValidateOnLine="1"
+                        type="M"
+                        min_length="0"
+                        max_length="250"
+                        double_input="0"
+                        value="РОССИЯ"
+                        reg_exp=""
+                        from_debt="0">
+                        <par_list value="РОССИЯ"/>
+                    </par>
+                </pars>
+                <sys_message></sys_message>
+            </serv>
+        </services>
+        <summa>0</summa>
+</order>
