@@ -1,7 +1,6 @@
 package just.artmmslv;
 
 import org.xml.sax.Attributes;
-import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 import java.util.ArrayList;
@@ -17,7 +16,7 @@ public class DocumentTypeFinder extends DefaultHandler {
     private List<String> result = null;
     private boolean isInListOfDocuments;
 
-    public List<String> getDocuments(){
+    List<String> getDocuments() {
         return result;
     }
 
@@ -25,22 +24,22 @@ public class DocumentTypeFinder extends DefaultHandler {
     public void startElement(String uri,
                              String localName,
                              String qName,
-                             Attributes attributes) throws SAXException {
-        System.out.println("startElement ");
-        System.out.println("uri " + uri);
-        System.out.println("localName " + localName);
-        System.out.println("qName " + qName);
-        System.out.println();
+                             Attributes attributes) {
+        if (qName.equals("par") && attributes.getValue("name").equals("ВИД_ДОК")) {
+            isInListOfDocuments = true;
+            result = new ArrayList<>();
+        }
+        if (isInListOfDocuments && qName.equals("par_list")) {
+            result.add(attributes.getValue("value"));
+        }
     }
 
     @Override
     public void endElement(String uri,
                            String localName,
-                           String qName) throws SAXException {
-        System.out.println("endElement ");
-        System.out.println("uri " + uri);
-        System.out.println("localName " + localName);
-        System.out.println("qName " + qName);
-        System.out.println();
+                           String qName) {
+        if (qName.equals("par") && isInListOfDocuments) {
+            isInListOfDocuments = false;
+        }
     }
 }
