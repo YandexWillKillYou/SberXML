@@ -29,9 +29,12 @@ public class Main {
     public static void main(String[] args) {
         if(args.length == 0){
             printList(findDocumentsInXML(Paths.get("file.xml")));
+            System.out.println("______________________________________");
+            printAttributes(Paths.get("file.xml"));
         } else {
             for(String arg : args){
                 printList(findDocumentsInXML(Paths.get(arg)));
+                printAttributes(Paths.get(arg));
             }
         }
 
@@ -47,6 +50,19 @@ public class Main {
             xmlReader.parse(source.toString());
             return finder.getDocuments();
         }catch (ParserConfigurationException | SAXException | IOException e ){
+            throw new RuntimeException(e);
+        }
+    }
+
+    private static void printAttributes(Path source){
+        try{
+            SAXParserFactory factory = SAXParserFactory.newInstance();
+            SAXParser saxParser = factory.newSAXParser();
+            XMLReader xmlReader = saxParser.getXMLReader();
+            AttributesPrinter printer = new AttributesPrinter();
+            xmlReader.setContentHandler(printer);
+            xmlReader.parse(source.toString());
+        }catch (ParserConfigurationException | SAXException | IOException e){
             throw new RuntimeException(e);
         }
     }

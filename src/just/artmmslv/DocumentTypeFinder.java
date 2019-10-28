@@ -25,11 +25,11 @@ public class DocumentTypeFinder extends DefaultHandler {
                              String localName,
                              String qName,
                              Attributes attributes) {
-        if (qName.equals("par") && attributes.getValue("name").equals("ВИД_ДОК")) {
+        if ("par".equals(qName) && "ВИД_ДОК".equals(attributes.getValue("name"))) {
             isInListOfDocuments = true;
             result = new ArrayList<>();
         }
-        if (isInListOfDocuments && qName.equals("par_list")) {
+        if (isInListOfDocuments && "par_list".equals(qName)) {
             result.add(attributes.getValue("value"));
         }
     }
@@ -38,7 +38,7 @@ public class DocumentTypeFinder extends DefaultHandler {
     public void endElement(String uri,
                            String localName,
                            String qName) {
-        if (qName.equals("par") && isInListOfDocuments) {
+        if ("par".equals(qName)) {
             isInListOfDocuments = false;
         }
     }

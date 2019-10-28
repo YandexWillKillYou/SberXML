@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/SberXML.iml" filepath="$PROJECT_DIR$/SberXML.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/SberXML.iml" filepath="$PROJECT_DIR$/.idea/SberXML.iml" />
     </modules>
   </component>
 </project>
